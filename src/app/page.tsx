@@ -1,5 +1,4 @@
-import { Button } from "@/components/ui/button";
-import Image from "next/image";
+import { ButtonLink } from "@/components/ButtonLink";
 
 export default function Home() {
   return (
@@ -9,8 +8,8 @@ export default function Home() {
         <h2>{process.env.APP_DESCRIPTION}</h2>
       </div>
       <div className="w-1/2">
-        <Button>Login</Button>
-        <Button>Register</Button>
+        <ButtonLink label="Access an existing account" path="/login" />
+        <ButtonLink label="Create a new account" path="/register" />
       </div>
     </main>
   );
