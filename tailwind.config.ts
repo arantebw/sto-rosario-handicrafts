@@ -13,6 +13,9 @@ const config: Config = {
         "gradient-conic":
           "conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))",
       },
+      backgroundColor:{
+        "background-rgb": "rgb(214, 219, 220)", // custom background color of main content
+      },
     },
   },
   plugins: [],
