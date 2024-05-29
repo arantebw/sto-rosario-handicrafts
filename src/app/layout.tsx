@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
 import { cn } from "@/lib/utils";
 import "./globals.css";
+import { ThemeProvider } from "@/components/theme-provider";
 
 const ubuntu = Ubuntu({
   subsets: ["latin"],
@@ -26,7 +27,14 @@ export default function RootLayout({
           ubuntu.className,
         )}
       >
-        {children}
+        <ThemeProvider
+          attribute="class"
+          defaultTheme="system"
+          enableSystem
+          disableTransitionOnChange
+        >
+          {children}
+        </ThemeProvider>
       </body>
     </html>
   );
