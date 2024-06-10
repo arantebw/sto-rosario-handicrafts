@@ -1,5 +1,6 @@
 import ButtonLink from "@/components/button-link";
 import { ModeToggle } from "@/components/mode-toggle";
+import { UserLoginForm } from "../components/user-auth-form";
 
 function LoginPage() {
   return (
@@ -15,8 +16,10 @@ function LoginPage() {
       </div>
       <div className="w-1/2 flex flex-col justify-center">
         <div className="w-1/2 mx-auto flex flex-col justify-center gap-4">
+          <UserLoginForm />
+          <hr />
           <p>Do not have an account yet?</p>
-          <ButtonLink label="Register" path="/register" />
+          <ButtonLink label="Create a new account" path="/register" variant="outline" />
         </div>
       </div>
     </main>

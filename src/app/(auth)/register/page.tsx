@@ -16,7 +16,7 @@ function RegisterPage() {
       <div className="w-1/2 flex flex-col justify-center">
         <div className="w-1/2 mx-auto flex flex-col justify-center gap-4">
           <p>Already have an account?</p>
-          <ButtonLink label="Login" path="/login" />
+          <ButtonLink label="Login" path="/login" variant="outline" />
         </div>
       </div>
     </main>
