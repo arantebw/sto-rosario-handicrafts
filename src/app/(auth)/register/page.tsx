@@ -1,5 +1,7 @@
+import { RegisterForm } from "@/components/auth-form";
 import ButtonLink from "@/components/button-link";
 import { ModeToggle } from "@/components/mode-toggle";
+import WelcomeSection from "@/components/welcome-section";
 
 function RegisterPage() {
   return (
@@ -7,16 +9,13 @@ function RegisterPage() {
       <div className="absolute top-4 right-4">
         <ModeToggle />
       </div>
-      <div className="w-1/2 flex flex-col justify-center">
-        <div className="w-3/4 mx-auto">
-          <h1 className="text-5xl text-center mb-4">{process.env.APP_NAME}</h1>
-          <h2 className="text-center">{process.env.APP_DESCRIPTION}</h2>
-        </div>
-      </div>
+      <WelcomeSection />
       <div className="w-1/2 flex flex-col justify-center">
         <div className="w-1/2 mx-auto flex flex-col justify-center gap-4">
+          <RegisterForm />
+          <hr />
           <p>Already have an account?</p>
-          <ButtonLink label="Login" path="/login" variant="outline" />
+          <ButtonLink label="Open an existing account" path="/login" variant="outline" />
         </div>
       </div>
     </main>

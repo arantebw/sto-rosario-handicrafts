@@ -14,3 +14,16 @@ export async function userLogin(formData: FormData) {
   revalidatePath("/account");
   redirect("/account");
 }
+
+export async function userRegister(formData: FormData) {
+  try {
+    console.log(formData.get("email"));
+    console.log(formData.get("password"));
+    console.log(formData.get("confirm_password"));
+  } catch (error) {
+    console.log(error);
+  }
+
+  revalidatePath("/login");
+  redirect("/login");
+}
