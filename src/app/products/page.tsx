@@ -1,7 +1,7 @@
-import ItemsCarousel from "@/components/items-carousel/page";
-import NavFooter from "@/components/nav-footer/page";
-import NavHeader from "@/components/nav-header/page";
-import TodaysDeals from "@/components/todays-deals/page";
+import ItemsCarousel from "@/components/items-carousel";
+import NavFooter from "@/components/nav-footer";
+import NavHeader from "@/components/nav-header";
+import TodaysDeals from "@/components/todays-deals";
 
 function ProductsPage() {
   return (
