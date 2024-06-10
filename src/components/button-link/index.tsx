@@ -7,10 +7,12 @@ type ButtonLinkProps = {
   path?: string;
 };
 
-export function ButtonLink({ label, path = "#" }: ButtonLinkProps) {
+function ButtonLink({ label, path = "#" }: ButtonLinkProps) {
   return (
     <Button asChild>
       <Link href={path}>{label}</Link>
     </Button>
   );
 }
+
+export default ButtonLink;
