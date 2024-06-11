@@ -8,10 +8,11 @@ async function TodaysDeals() {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {bayongs.map((bayong) => (
           <ProductCard
-            key={bayong.key}
-            cloudinaryPublicId={bayong.src}
+            productId={bayong.key}
+            cloudinaryPublicId={bayong.cloudinaryPublicId}
             name={bayong.name}
             price={bayong.price}
+            key={bayong.key}
           />
         ))}
       </div>

@@ -1,7 +1,7 @@
 [
   {
     "key": "1a9b3c5d7e8f2g",
-    "src": "project-jia/ofnvsks9oovf17ivqui7",
+    "cloudinaryPublicId": "project-jia/ofnvsks9oovf17ivqui7",
     "name": "Medical Set Braided",
     "price": {
       "decimal": 350,
@@ -10,83 +10,83 @@
   },
   {
     "key": "2h3i4j5k6l7m8n",
-    "src": "project-jia/ofnvsks9oovf17ivqui7",
-    "name": "Medical Set Braided",
+    "cloudinaryPublicId": "project-jia/mtwxz0subdn4mu2ryqxb",
+    "name": "Bayong #5 X Design Medium Abaca size 12 ",
     "price": {
-      "decimal": 350,
-      "fraction": 75
+      "decimal": 700,
+      "fraction": 0
     }
   },
   {
     "key": "3o4p5q6r7s8t9u",
-    "src": "project-jia/ofnvsks9oovf17ivqui7",
-    "name": "Medical Set Braided",
+    "cloudinaryPublicId": "project-jia/wct6ldivh7aoaxjyo42x",
+    "name": "Bayong #5 Checkered Center Medium size 12",
     "price": {
-      "decimal": 350,
-      "fraction": 75
+      "decimal": 450,
+      "fraction": 0
     }
   },
   {
     "key": "4v5w6x7y8z9a1b",
-    "src": "project-jia/ofnvsks9oovf17ivqui7",
-    "name": "Medical Set Braided",
+    "cloudinaryPublicId": "project-jia/rchzh6yjgzwqzos3atn7",
+    "name": "Bayong #5 Checkered Center Medium size 12",
     "price": {
-      "decimal": 350,
-      "fraction": 75
+      "decimal": 450,
+      "fraction": 0
     }
   },
   {
     "key": "5c6d7e8f9g1h2i",
-    "src": "project-jia/ofnvsks9oovf17ivqui7",
-    "name": "Medical Set Braided",
+    "cloudinaryPublicId": "project-jia/ghsoxuv1mgkekndg2mij",
+    "name": "Bayong #6 small 2over2 Design",
     "price": {
-      "decimal": 350,
-      "fraction": 75
+      "decimal": 700,
+      "fraction": 0
     }
   },
   {
     "key": "6j7k8l9m1n2o3p",
-    "src": "project-jia/ofnvsks9oovf17ivqui7",
-    "name": "Medical Set Braided",
+    "cloudinaryPublicId": "project-jia/fvyqhppidnozj3owdxhj",
+    "name": "Bayong #6 small 2over2 Bariw",
     "price": {
-      "decimal": 350,
-      "fraction": 75
+      "decimal": 450,
+      "fraction": 0
     }
   },
   {
     "key": "7q8r9s1t2u3v4w",
-    "src": "project-jia/ofnvsks9oovf17ivqui7",
-    "name": "Medical Set Braided",
+    "cloudinaryPublicId": "project-jia/exh179ovvkegri4ut5df",
+    "name": "Bayong #6 checkered Center",
     "price": {
-      "decimal": 350,
-      "fraction": 75
+      "decimal": 450,
+      "fraction": 0
     }
   },
   {
     "key": "8x9y1z2a3b4c5d",
-    "src": "project-jia/ofnvsks9oovf17ivqui7",
-    "name": "Medical Set Braided",
+    "cloudinaryPublicId": "project-jia/hmh3aunrolgulci0wt9w",
+    "name": "Bayong #5 Medium Checkered Design size 9",
     "price": {
-      "decimal": 350,
-      "fraction": 75
+      "decimal": 380,
+      "fraction": 0
     }
   },
   {
     "key": "9e1f2g3h4i5j6k",
-    "src": "project-jia/ofnvsks9oovf17ivqui7",
-    "name": "Medical Set Braided",
+    "cloudinaryPublicId": "project-jia/m9znecuqpdxajog1iawi",
+    "name": "Half Bayong Checkered Center Design size 10",
     "price": {
-      "decimal": 350,
-      "fraction": 75
+      "decimal": 550,
+      "fraction": 0
     }
   },
   {
     "key": "1l2m3n4o5p6q7r",
-    "src": "project-jia/ofnvsks9oovf17ivqui7",
-    "name": "Medical Set Braided",
+    "cloudinaryPublicId": "project-jia/luknsghn9tgid9cjtxvz",
+    "name": "Half Bayong Triple O Design",
     "price": {
-      "decimal": 350,
-      "fraction": 75
+      "decimal": 550,
+      "fraction": 0
     }
   }
 ]
