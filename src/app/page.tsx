@@ -14,7 +14,7 @@ function HomePage() {
       <div className="w-1/2 flex flex-col justify-center">
         <div className="w-1/2 mx-auto flex flex-col justify-center gap-4">
           <p>
-            Let's go and <Link className="text-green-600 hover:underline" href="/products">start shopping</Link>!
+            Let&apos;s go and <Link className="text-green-600 hover:underline" href="/products">start shopping</Link>!
           </p>
           <Separator />
           <ButtonLink label="Login" path="/login" />
