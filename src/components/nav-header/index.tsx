@@ -6,14 +6,14 @@ import { SearchBox } from "../search-box";
 async function NavHeader() {
   return (
     <>
-      <header className="p-4 grid grid-cols-3 content-evenly gap-4">
-        <div className="flex flex-row items-center">
-          <h1 className="font-bold">{process.env.APP_NAME}</h1>
+      <header className="p-4 flex flex-col lg:grid lg:grid-cols-3 lg:content-evenly gap-4">
+        <div className="flex flex-row justify-center lg:justify-start items-center">
+          <h1 className="text-xl lg:text-2xl font-bold">{process.env.APP_NAME}</h1>
         </div>
         <div>
           <SearchBox />
         </div>
-        <nav className="flex flex-row gap-8 justify-end">
+        <nav className="flex flex-row gap-8 justify-center lg:justify-end">
           <Link href="/account" className="flex flex-row gap-1 items-center">
             <UserIcon width="16" height="16" />
             Account

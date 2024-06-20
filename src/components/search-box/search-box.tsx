@@ -11,7 +11,7 @@ const SearchBox: FC<SearchBoxProps> = ({ placeholder = "Search..." }) => {
   const [searchTerm, setSearchTerm] = useState("");
 
   return (
-    <div className="flex items-center border border-gray-300 rounded-md p-2 shadow-sm">
+    <div className="flex items-center border rounded-md p-2">
       <SearchIcon width="16" height="16" />
       <input
         type="text"
