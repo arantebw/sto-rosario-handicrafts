@@ -29,18 +29,18 @@ async function NavHeader() {
         </nav>
       </header>
       <Separator />
-      <ul className="flex flex-row gap-4 justify-center">
-        <li className="p-4">
+      <ul className="flex flex-row flex-wrap md:flex-nowrap md:justify-center">
+        <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
           <Link href="/products">Today&apos;s Deals</Link>
         </li>
-        <li className="p-4">
-          <Link href="#">Category 1</Link>
+        <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
+          <Link href="#">Banig</Link>
         </li>
-        <li className="p-4">
-          <Link href="#">Category 2</Link>
+        <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
+          <Link href="#">Bayong</Link>
         </li>
-        <li className="p-4">
-          <Link href="#">Category 3</Link>
+        <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
+          <Link href="#">Wallets</Link>
         </li>
       </ul>
       <Separator />
