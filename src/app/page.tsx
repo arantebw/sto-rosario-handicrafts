@@ -5,10 +5,10 @@ import Link from "next/link";
 
 function HomePage() {
   return (
-    <main className="max-w-[1440px] mx-auto flex flex-row h-screen relative">
+    <main className="w-screen lg:max-w-[1440px] mx-auto flex flex-col lg:flex-row relative">
       <WelcomeSection />
-      <div className="w-1/2 flex flex-col justify-center">
-        <div className="w-1/2 mx-auto flex flex-col justify-center gap-4">
+      <div className="w-full lg:w-1/2 h-screen flex flex-col justify-center p-4">
+        <div className="w-full md:w-1/2 mx-auto flex flex-col justify-center gap-4">
           <p>
             Let&apos;s go and <Link className="text-green-600 hover:underline" href="/products">start shopping</Link>!
           </p>
