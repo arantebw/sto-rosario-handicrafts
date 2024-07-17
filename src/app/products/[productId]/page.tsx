@@ -16,7 +16,9 @@ function ProductDetailsPage({ params }: ProductDetailsPageProps) {
   return (
     <main className="max-w-[1440px] mx-auto flex flex-col h-screen relative">
       <NavHeader />
-      <ProductDetails currentProduct={currentProduct} />
+      <div className="flex flex-row justify-center">
+        <ProductDetails currentProduct={currentProduct} />
+      </div>
       <NavFooter />
     </main>
   );
