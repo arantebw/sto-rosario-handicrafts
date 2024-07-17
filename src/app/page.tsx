@@ -10,11 +10,11 @@ function HomePage() {
       <div className="w-full lg:w-1/2 h-screen flex flex-col justify-center p-4">
         <div className="w-full md:w-1/2 mx-auto flex flex-col justify-center gap-4">
           <p>
-            Let&apos;s go and <Link className="text-green-600 hover:underline" href="/products">start shopping</Link>!
+            Let&apos;s go and <Link className="text-green-600 hover:underline" href="/products">start shopping</Link>! Or,
           </p>
           <Separator />
-          <ButtonLink label="Login" path="/login" />
-          <ButtonLink label="Register" path="/register" />
+          <ButtonLink label="Open an existing account" path="/login#form-section" />
+          <ButtonLink label="Create a new account" path="/register#form-section" />
         </div>
       </div>
     </main>
