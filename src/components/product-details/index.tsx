@@ -26,9 +26,7 @@ function ProductDetails({ currentProduct }: ProductDetailsProps) {
       />
       <div className="flex flex-col gap-4 w-1/2">
         <h2 className="text-2xl">{currentProduct.productName}</h2>
-        <p>
-          PHP {currentProduct.price.decimal}.{currentProduct.price.fraction}
-        </p>
+        <p>{`PHP ${currentProduct.price.decimal}.${currentProduct.price.fraction}`}</p>
         <div>
           <Button onClick={() => handleAddToCart(currentProduct)}>
             Add to cart
