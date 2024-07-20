@@ -1,5 +1,6 @@
 import NavFooter from "@/components/nav-footer";
 import NavHeader from "@/components/nav-header";
+import ShoppingCart from "@/components/shopping-cart";
 
 function CartPage() {
   return (
@@ -11,7 +12,7 @@ function CartPage() {
         </div>
         <div className="flex flex-col lg:flex-row gap-4">
           <div className="w-full lg:w-2/3 p-4 rounded-md border">
-            <h3 className="text-xl"></h3>
+            <ShoppingCart />
           </div>
           <div className="w-full lg:w-1/3 p-4 rounded-md border">
             <h3 className="text-xl">Cart Summary</h3>
@@ -23,4 +24,4 @@ function CartPage() {
   );
 }
 
-export default CartPage
+export default CartPage;
