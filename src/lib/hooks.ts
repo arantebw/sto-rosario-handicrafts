@@ -2,13 +2,19 @@ import { Account, Product } from "@/types";
 import { create } from "zustand";
 import { persist, createJSONStorage } from "zustand/middleware";
 
+type CartItem = {
+  product: Product;
+  count: number;
+};
+
 type State = {
   account: Account;
-  cart: Product[];
+  cart: CartItem[];
 };
 
 type Actions = {
-  updateCart: (product: Product) => void;
+  addItemToCart: (product: Product) => void;
+  deleteItemFromCart: (productId: string) => void;
   clearCart: () => void;
 };
 
@@ -20,8 +26,14 @@ export const useStore = create(
         accessToken: "",
       },
       cart: [],
-      updateCart: (product: Product) =>
-        set(() => ({ cart: [...get().cart, product] })),
+      addItemToCart: (product: Product) =>
+        set(() => ({ cart: [...get().cart, { product, count: 1 }] })),
+      deleteItemFromCart: (productId: string) =>
+        set({
+          cart: [
+            ...get().cart.filter((item) => item.product.productId != productId),
+          ],
+        }),
       clearCart: () => set(() => ({ cart: [] })),
     }),
     { name: "user-data", storage: createJSONStorage(() => localStorage) },
