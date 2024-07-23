@@ -13,10 +13,10 @@ type State = {
 };
 
 type Actions = {
-  addItemToCart: (product: Product) => void;
+  addItemToCart: (product: Product, quantity?: number) => void;
   deleteItemFromCart: (productId: string) => void;
   clearCart: () => void;
-  updateItemCount: (productId: string) => void;
+  updateItemCount: (productId: string, quantity?: number) => void;
 };
 
 export const useStore = create(
@@ -27,21 +27,21 @@ export const useStore = create(
         accessToken: "",
       },
       cart: [],
-      addItemToCart: (product: Product) =>
-        set(() => ({ cart: [...get().cart, { product, count: 1 }] })),
-      deleteItemFromCart: (productId: string) =>
+      addItemToCart: (product, quantity = 1) =>
+        set(() => ({ cart: [...get().cart, { product, count: quantity }] })),
+      deleteItemFromCart: (productId) =>
         set({
           cart: [
             ...get().cart.filter((item) => item.product.productId != productId),
           ],
         }),
       clearCart: () => set(() => ({ cart: [] })),
-      updateItemCount: (productId: string) => {
+      updateItemCount: (productId, quantity = 1) => {
         const item = get().cart.find(
           (item) => item.product.productId == productId,
         );
         if (item) {
-          item.count += 1;
+          item.count += quantity;
         }
         set({ cart: [...get().cart] });
       },
