@@ -11,7 +11,7 @@ async function TodaysDeals() {
           <ProductCard
             key={bayong.productId}
             productId={bayong.productId}
-            cloudinaryPublicId={bayong.cloudinaryPublicId}
+            cloudinaryPublicId={bayong?.cloudinaryPublicId}
             name={bayong.productName}
             price={bayong.price}
           />

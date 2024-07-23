@@ -23,7 +23,7 @@ function ProductCard({
     <div className="w-full rounded-md overflow-hidden border">
       <Link href={`/products/${productId}`}>
         <CldImage
-          src={cloudinaryPublicId}
+          src={cloudinaryPublicId ?? ""}
           width="500"
           height="500"
           crop={{
