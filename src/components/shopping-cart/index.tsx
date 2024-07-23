@@ -3,6 +3,7 @@
 import { useStore } from "@/lib/hooks";
 import { CldImage } from "next-cloudinary";
 import { Button } from "../ui/button";
+import { TrashIcon } from "../icons";
 
 function ShoppingCart() {
   const cartItems = useStore((state) => state.cart);
@@ -31,12 +32,13 @@ function ShoppingCart() {
           <div className="flex flex-row justify-between pb-4">
             <div>{`Item: ${count}`}</div>
             <Button
-              variant="destructive"
+              variant="secondary"
               size="sm"
-              className="uppercase"
               onClick={() => handleRemove(product.productId)}
+              className="flex flex-row gap-2 uppercase"
             >
-              Remove
+              <TrashIcon width="16" height="16" fill="#000" />
+              <span className="hidden md:block">Remove</span>
             </Button>
           </div>
         </div>

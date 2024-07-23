@@ -20,7 +20,7 @@ function ProductCard({
   price,
 }: ProductCardProps) {
   return (
-    <div className="max-w-sm rounded-md overflow-hidden border">
+    <div className="w-full rounded-md overflow-hidden border">
       <Link href={`/products/${productId}`}>
         <CldImage
           src={cloudinaryPublicId}
