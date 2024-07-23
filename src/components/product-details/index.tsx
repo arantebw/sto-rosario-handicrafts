@@ -4,6 +4,7 @@ import { CldImage } from "next-cloudinary";
 import { Button } from "@/components/ui/button";
 import { Product } from "@/types";
 import { useStore } from "@/lib/hooks";
+import { CartIcon } from "../icons";
 
 interface ProductDetailsProps {
   currentProduct: Product;
@@ -23,23 +24,29 @@ function ProductDetails({ currentProduct }: ProductDetailsProps) {
   };
 
   return (
-    <div className="flex flex-row justify-center gap-4 p-4 rounded border w-full lg:w-8/12">
+    <div className="flex flex-col md:flex-row justify-center gap-4 p-4 rounded lg:border w-full lg:w-8/12">
       <CldImage
         src={currentProduct.cloudinaryPublicId ?? ""} // TODO: Add an image placeholder.
         alt="A product's brief description."
         width="500"
         height="500"
-        className="rounded w-1/4 lg:w-1/2"
+        className="rounded w-full lg:w-1/2"
       />
-      <div className="flex flex-col gap-4 w-3/4 lg:w-1/2">
+      <div className="flex flex-col gap-4 w-full lg:w-1/2">
         <h2 className="text-xl">{currentProduct.productName}</h2>
         <p>{`PHP ${currentProduct.price.decimal}.${currentProduct.price.fraction}`}</p>
         <div>
+          <p>{`Quantity:`}</p>
+          <div>
+            <Button></Button>
+          </div>
+        </div>
+        <div>
           <Button
             onClick={() => handleAddToCart(currentProduct)}
-            className="uppercase"
-            size="sm"
+            className="flex flex-row gap-2 uppercase w-full"
           >
+            <CartIcon width="16" height="16" fill="white" />
             Add to cart
           </Button>
         </div>

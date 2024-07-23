@@ -4,18 +4,20 @@ interface CartIconProps {
   width?: string;
   height?: string;
   className?: string;
+  fill?: string;
 }
 
 const CartIcon: React.FC<CartIconProps> = ({
   width = "24",
   height = "24",
   className = "",
+  fill = "currentColor",
 }) => {
   return (
     <svg
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 576 512"
-      fill="currentColor"
+      fill={fill}
       width={width}
       height={height}
       className={`text-gray-800 ${className}`}
