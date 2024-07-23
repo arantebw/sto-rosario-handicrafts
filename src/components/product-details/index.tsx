@@ -12,9 +12,11 @@ interface ProductDetailsProps {
 function ProductDetails({ currentProduct }: ProductDetailsProps) {
   const cartItems = useStore((state) => state.cart);
   const addItemToCart = useStore((state) => state.addItemToCart);
+  const updateItemCount = useStore((state) => state.updateItemCount);
 
   const handleAddToCart = (product: Product) => {
     if (cartItems.some((item) => item.product.productId == product.productId)) {
+      updateItemCount(product.productId);
       return;
     }
     addItemToCart(product);
@@ -36,6 +38,7 @@ function ProductDetails({ currentProduct }: ProductDetailsProps) {
           <Button
             onClick={() => handleAddToCart(currentProduct)}
             className="uppercase"
+            size="sm"
           >
             Add to cart
           </Button>

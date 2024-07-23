@@ -16,6 +16,7 @@ type Actions = {
   addItemToCart: (product: Product) => void;
   deleteItemFromCart: (productId: string) => void;
   clearCart: () => void;
+  updateItemCount: (productId: string) => void;
 };
 
 export const useStore = create(
@@ -35,6 +36,15 @@ export const useStore = create(
           ],
         }),
       clearCart: () => set(() => ({ cart: [] })),
+      updateItemCount: (productId: string) => {
+        const item = get().cart.find(
+          (item) => item.product.productId == productId,
+        );
+        if (item) {
+          item.count += 1;
+        }
+        set({ cart: [...get().cart] });
+      },
     }),
     { name: "user-data", storage: createJSONStorage(() => localStorage) },
   ),
