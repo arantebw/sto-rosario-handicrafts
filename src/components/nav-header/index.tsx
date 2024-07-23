@@ -1,14 +1,17 @@
 import Link from "next/link";
 import { Separator } from "../ui/separator";
-import { CartIcon, HeartIcon, UserIcon } from "../icons";
+import { HeartIcon, UserIcon } from "../icons";
 import { SearchBox } from "../search-box";
+import CartLink from "../cart-link";
 
 async function NavHeader() {
   return (
     <>
       <header className="p-4 flex flex-col lg:grid lg:grid-cols-3 lg:content-evenly gap-4">
         <div className="flex flex-row justify-center lg:justify-start items-center">
-          <h1 className="text-xl lg:text-2xl font-bold">{process.env.APP_NAME}</h1>
+          <h1 className="text-xl lg:text-2xl font-bold">
+            {process.env.APP_NAME}
+          </h1>
         </div>
         <div>
           <SearchBox />
@@ -22,10 +25,7 @@ async function NavHeader() {
             <HeartIcon width="16" height="16" />
             Wishlist
           </Link>
-          <Link href="/cart" className="flex flex-row gap-1 items-center">
-            <CartIcon width="16" height="16" />
-            Cart
-          </Link>
+          <CartLink />
         </nav>
       </header>
       <Separator />
