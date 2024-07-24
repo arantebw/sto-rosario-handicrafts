@@ -44,7 +44,6 @@ function ProductDetails({ currentProduct }: ProductDetailsProps) {
             type="number"
             min={1}
             max={99}
-            defaultValue={quantity}
             value={quantity}
             onChange={(e) => setQuantity(Number(e.target.value))}
             className="w-fit"

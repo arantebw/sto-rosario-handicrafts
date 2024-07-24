@@ -4,6 +4,7 @@ import { useStore } from "@/lib/hooks";
 import { CldImage } from "next-cloudinary";
 import { Button } from "../ui/button";
 import { TrashIcon } from "../icons";
+import ItemQuantity from "../item-quantity";
 
 function ShoppingCart() {
   const cartItems = useStore((state) => state.cart);
@@ -30,7 +31,7 @@ function ShoppingCart() {
             </div>
           </div>
           <div className="flex flex-row justify-between pb-4">
-            <div>{`Item: ${count}`}</div>
+            <ItemQuantity cartItem={{ productId: product.productId, count }} />
             <Button
               variant="secondary"
               size="sm"

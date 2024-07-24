@@ -17,6 +17,8 @@ type Actions = {
   deleteItemFromCart: (productId: string) => void;
   clearCart: () => void;
   updateItemCount: (productId: string, quantity?: number) => void;
+  incrementItemCount: (productId: string) => void;
+  decrementItemCount: (productId: string) => void;
 };
 
 export const useStore = create(
@@ -42,6 +44,24 @@ export const useStore = create(
         );
         if (item) {
           item.count += quantity;
+        }
+        set({ cart: [...get().cart] });
+      },
+      incrementItemCount: (productId) => {
+        const item = get().cart.find(
+          (item) => item.product.productId == productId,
+        );
+        if (item) {
+          item.count += 1;
+        }
+        set({ cart: [...get().cart] });
+      },
+      decrementItemCount: (productId) => {
+        const item = get().cart.find(
+          (item) => item.product.productId == productId,
+        );
+        if (item) {
+          item.count -= 1;
         }
         set({ cart: [...get().cart] });
       },
