@@ -28,13 +28,14 @@ function ItemQuantity({ cartItem }: ItemQuantityProps) {
   };
 
   return (
-    <div className="flex flex-row items-center">
+    <div className="flex flex-row gap-1 items-center">
       <Button
         type="button"
-        variant="outline"
+        variant="secondary"
         size="icon"
         onClick={handleDecrement}
         disabled={quantity == 1}
+        className="rounded-none rounded-l-md"
       >
         {`-`}
       </Button>
@@ -44,14 +45,15 @@ function ItemQuantity({ cartItem }: ItemQuantityProps) {
         min={1}
         max={99}
         onChange={(e) => setQuantity(Number(e.target.value))}
-        className="w-12 text-center"
+        className="w-12 text-center rounded-none"
       />
       <Button
         type="button"
-        variant="outline"
+        variant="secondary"
         size="icon"
         onClick={handleIncrement}
         disabled={quantity == 99}
+        className="rounded-none rounded-r-md"
       >
         {`+`}
       </Button>

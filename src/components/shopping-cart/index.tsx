@@ -34,7 +34,7 @@ function ShoppingCart() {
             <ItemQuantity cartItem={{ productId: product.productId, count }} />
             <Button
               variant="secondary"
-              size="sm"
+              size="default"
               onClick={() => handleRemove(product.productId)}
               className="flex flex-row gap-2 uppercase"
             >
