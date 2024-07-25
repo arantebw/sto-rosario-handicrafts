@@ -1,3 +1,4 @@
+export { default as ArrowRightIcon } from "./arrow-right";
 export { default as CartIcon } from "./cart-icon";
 export { default as HeartIcon } from "./heart-icon";
 export { default as SearchIcon } from "./search-icon";
