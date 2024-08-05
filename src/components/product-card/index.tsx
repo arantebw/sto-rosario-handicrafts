@@ -1,5 +1,6 @@
 "use client";
 
+import { formatToCurrency } from "@/lib/utils";
 import { CldImage } from "next-cloudinary";
 import Link from "next/link";
 
@@ -34,7 +35,7 @@ function ProductCard({
         />
         <div className="p-4">
           <h3>{name}</h3>
-          <p>{`PHP ${price.decimal}.${price.fraction}`}</p>
+          <p>{`${formatToCurrency(Number(price.decimal + "." + price.fraction))}`}</p>
         </div>
       </Link>
     </div>

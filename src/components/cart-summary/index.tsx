@@ -4,6 +4,7 @@ import { ArrowRightIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import { useStore } from "@/lib/hooks";
+import { formatToCurrency } from "@/lib/utils";
 
 function CartSummary() {
   const cartSummary = useStore((state) => state.cartSummary);
@@ -13,7 +14,7 @@ function CartSummary() {
       <div className="flex flex-row justify-between items-center">
         <div>
           <h2 className="text-2xl">Cart Summary</h2>
-          <small className="text-gray-500 lg:hidden">{`PHP ${cartSummary.total}`}</small>
+          <small className="text-gray-500 lg:hidden">{`${formatToCurrency(cartSummary.total)}`}</small>
         </div>
         <Button
           type="button"
@@ -27,24 +28,24 @@ function CartSummary() {
       <div className="flex flex-col gap-4 lg:mb-4">
         <p className="flex flex-row justify-between">
           <span>Subtotal</span>
-          <span>{`PHP ${cartSummary.subTotal}`}</span>
+          <span>{`${formatToCurrency(cartSummary.subTotal)}`}</span>
         </p>
         <p className="flex flex-row justify-between text-gray-500">
           <span>Shipping Fee</span>
-          <span>{`PHP ${cartSummary.shippingFee}`}</span>
+          <span>{`${formatToCurrency(cartSummary.shippingFee)}`}</span>
         </p>
         <p className="flex flex-row justify-between text-gray-500">
           <span>Discount</span>
-          <span>{`PHP ${cartSummary.discount}`}</span>
+          <span>{`${formatToCurrency(cartSummary.discount)}`}</span>
         </p>
         <p className="flex flex-row justify-between text-gray-500">
-          <span>Estimated Tax</span>
-          <span>{`PHP ${cartSummary.estimatedTax}`}</span>
+          <span>Estimated Tax (VAT 12%)</span>
+          <span>{`${formatToCurrency(cartSummary.estimatedTax)}`}</span>
         </p>
         <Separator />
         <p className="flex flex-row justify-between font-bold">
           <span>Total</span>
-          <span>{`PHP ${cartSummary.total}`}</span>
+          <span>{`${formatToCurrency(cartSummary.total)}`}</span>
         </p>
       </div>
       <Button

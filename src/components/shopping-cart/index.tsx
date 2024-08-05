@@ -5,6 +5,7 @@ import { CldImage } from "next-cloudinary";
 import { Button } from "../ui/button";
 import { TrashIcon } from "../icons";
 import ItemQuantity from "../item-quantity";
+import { formatToCurrency } from "@/lib/utils";
 
 function ShoppingCart() {
   const cartItems = useStore((state) => state.cart);
@@ -34,7 +35,7 @@ function ShoppingCart() {
               />
               <div className="flex flex-col gap-4">
                 <h3 className="text-xl">{product.productName}</h3>
-                <p>{`PHP ${product.price.decimal}.${product.price.fraction}`}</p>
+                <p>{`${formatToCurrency(Number(product.price.decimal + "." + product.price.fraction))}`}</p>
               </div>
             </div>
             <div className="flex flex-row justify-between pb-4">

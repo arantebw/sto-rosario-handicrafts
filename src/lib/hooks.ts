@@ -81,6 +81,10 @@ export const useStore = create(
         set({ cart: [...get().cart] });
       },
       updateCartSummary: () => {
+        let shippingFee = 0,
+          discount = 0,
+          estimatedTax = 0,
+          total = 0;
         const cart = get().cart;
         const cartSummary = get().cartSummary;
         let subTotal = cart.reduce((accumulator, item) => {
@@ -89,7 +93,22 @@ export const useStore = create(
           );
           return accumulator + item.count * Number(itemPrice);
         }, 0);
-        set({ cartSummary: { ...cartSummary, subTotal } });
+        if (subTotal) {
+          shippingFee = 200;
+          discount = 100 * -1;
+          estimatedTax = 0.12 * subTotal;
+          total = subTotal + shippingFee + discount + estimatedTax;
+        }
+        set({
+          cartSummary: {
+            ...cartSummary,
+            total,
+            subTotal,
+            shippingFee,
+            discount,
+            estimatedTax,
+          },
+        });
       },
     }),
     { name: "user-data", storage: createJSONStorage(() => localStorage) },
