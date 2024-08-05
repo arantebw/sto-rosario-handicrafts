@@ -8,7 +8,13 @@ import ItemQuantity from "../item-quantity";
 
 function ShoppingCart() {
   const cartItems = useStore((state) => state.cart);
-  const handleRemove = useStore((state) => state.deleteItemFromCart);
+  const deleteItemFromCart = useStore((state) => state.deleteItemFromCart);
+  const updateCartSummary = useStore((state) => state.updateCartSummary);
+
+  const handleRemoveBtnClick = (productId: string) => {
+    deleteItemFromCart(productId);
+    updateCartSummary();
+  };
 
   return (
     <div className="w-full lg:w-2/3 md:px-4 md:pt-4 rounded-md md:border">
@@ -38,7 +44,7 @@ function ShoppingCart() {
               <Button
                 variant="secondary"
                 size="default"
-                onClick={() => handleRemove(product.productId)}
+                onClick={() => handleRemoveBtnClick(product.productId)}
                 className="flex flex-row gap-2 uppercase"
               >
                 <TrashIcon width="16" height="16" fill="#000" />

@@ -17,6 +17,7 @@ function ProductDetails({ currentProduct }: ProductDetailsProps) {
   const addItemToCart = useStore((state) => state.addItemToCart);
   const updateItemCount = useStore((state) => state.updateItemCount);
   const [quantity, setQuantity] = useState(1);
+  const updateCartSummary = useStore((state) => state.updateCartSummary);
 
   const handleAddToCart = (product: Product, quantity = 1) => {
     if (cartItems.some((item) => item.product.productId == product.productId)) {
@@ -24,6 +25,7 @@ function ProductDetails({ currentProduct }: ProductDetailsProps) {
       return;
     }
     addItemToCart(product, quantity);
+    updateCartSummary();
   };
 
   return (
