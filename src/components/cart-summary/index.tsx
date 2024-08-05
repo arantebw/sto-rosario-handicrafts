@@ -6,19 +6,22 @@ import { Separator } from "@/components/ui/separator";
 
 function CartSummary() {
   return (
-    <div className="w-full lg:w-1/3 md:p-4 rounded-md md:border">
+    <div className="w-full lg:w-1/3 h-fit md:p-4 rounded-md md:border">
       <div className="flex flex-row justify-between items-center">
         <div>
           <h2 className="text-2xl">Cart Summary</h2>
-          <small className="text-gray-500">PHP 1,000,000.00</small>
+          <small className="text-gray-500 lg:hidden">PHP 1,000,000.00</small>
         </div>
-        <Button type="button" className="flex flex-row gap-2 uppercase">
+        <Button
+          type="button"
+          className="flex flex-row gap-2 uppercase lg:hidden"
+        >
           <ArrowRightIcon width="16" height="16" fill="#fff" />
           Checkout
         </Button>
       </div>
       <Separator className="my-4" />
-      <div className="flex flex-col gap-4">
+      <div className="flex flex-col gap-4 lg:mb-4">
         <p className="flex flex-row justify-between">
           <span>Subtotal</span>
           <span>PHP 12,345.67</span>
@@ -35,11 +38,19 @@ function CartSummary() {
           <span>Estimated Tax</span>
           <span>PHP 123.45</span>
         </p>
+        <Separator />
         <p className="flex flex-row justify-between font-bold">
           <span>Total</span>
           <span>PHP 1,000,000.00</span>
         </p>
       </div>
+      <Button
+        type="button"
+        className="hidden w-full lg:flex lg:flex-row gap-2 uppercase"
+      >
+        <ArrowRightIcon width="16" height="16" fill="#fff" />
+        Proceed to Checkout
+      </Button>
     </div>
   );
 }
