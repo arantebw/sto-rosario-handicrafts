@@ -3,14 +3,17 @@
 import { ArrowRightIcon } from "@/components/icons";
 import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
+import { useStore } from "@/lib/hooks";
 
 function CartSummary() {
+  const cartSummary = useStore((state) => state.cartSummary);
+
   return (
     <div className="w-full lg:w-1/3 h-fit md:p-4 rounded-md md:border">
       <div className="flex flex-row justify-between items-center">
         <div>
           <h2 className="text-2xl">Cart Summary</h2>
-          <small className="text-gray-500 lg:hidden">PHP 1,000,000.00</small>
+          <small className="text-gray-500 lg:hidden">{`PHP ${cartSummary.total}`}</small>
         </div>
         <Button
           type="button"
@@ -24,24 +27,24 @@ function CartSummary() {
       <div className="flex flex-col gap-4 lg:mb-4">
         <p className="flex flex-row justify-between">
           <span>Subtotal</span>
-          <span>PHP 12,345.67</span>
+          <span>{`PHP ${cartSummary.subTotal}`}</span>
         </p>
         <p className="flex flex-row justify-between text-gray-500">
           <span>Shipping Fee</span>
-          <span>PHP 1,234.56</span>
+          <span>{`PHP ${cartSummary.shippingFee}`}</span>
         </p>
         <p className="flex flex-row justify-between text-gray-500">
           <span>Discount</span>
-          <span>PHP 123.45</span>
+          <span>{`PHP ${cartSummary.discount}`}</span>
         </p>
         <p className="flex flex-row justify-between text-gray-500">
           <span>Estimated Tax</span>
-          <span>PHP 123.45</span>
+          <span>{`PHP ${cartSummary.estimatedTax}`}</span>
         </p>
         <Separator />
         <p className="flex flex-row justify-between font-bold">
           <span>Total</span>
-          <span>PHP 1,000,000.00</span>
+          <span>{`PHP ${cartSummary.total}`}</span>
         </p>
       </div>
       <Button

@@ -10,6 +10,13 @@ type CartItem = {
 type State = {
   account: Account;
   cart: CartItem[];
+  cartSummary: {
+    total: number;
+    subTotal: number;
+    shippingFee: number;
+    discount: number;
+    estimatedTax: number;
+  };
 };
 
 type Actions = {
@@ -19,6 +26,7 @@ type Actions = {
   updateItemCount: (productId: string, quantity?: number) => void;
   incrementItemCount: (productId: string) => void;
   decrementItemCount: (productId: string) => void;
+  updateCartSummary: () => void;
 };
 
 export const useStore = create(
@@ -29,6 +37,13 @@ export const useStore = create(
         accessToken: "",
       },
       cart: [],
+      cartSummary: {
+        total: 0.0,
+        subTotal: 0.0,
+        shippingFee: 0.0,
+        discount: 0.0,
+        estimatedTax: 0.0,
+      },
       addItemToCart: (product, quantity = 1) =>
         set(() => ({ cart: [...get().cart, { product, count: quantity }] })),
       deleteItemFromCart: (productId) =>
@@ -64,6 +79,17 @@ export const useStore = create(
           item.count -= 1;
         }
         set({ cart: [...get().cart] });
+      },
+      updateCartSummary: () => {
+        const cart = get().cart;
+        const cartSummary = get().cartSummary;
+        let subTotal = cart.reduce((accumulator, item) => {
+          const itemPrice = String(
+            item.product.price.decimal + "." + item.product.price.fraction,
+          );
+          return accumulator + item.count * Number(itemPrice);
+        }, 0);
+        set({ cartSummary: { ...cartSummary, subTotal } });
       },
     }),
     { name: "user-data", storage: createJSONStorage(() => localStorage) },

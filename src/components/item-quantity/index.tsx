@@ -16,15 +16,18 @@ function ItemQuantity({ cartItem }: ItemQuantityProps) {
   const [quantity, setQuantity] = useState(cartItem.count);
   const incrementItemCount = useStore((state) => state.incrementItemCount);
   const decrementItemCount = useStore((state) => state.decrementItemCount);
+  const updateCartSummary = useStore((state) => state.updateCartSummary);
 
   const handleDecrement = () => {
     setQuantity(quantity - 1);
     decrementItemCount(cartItem.productId);
+    updateCartSummary();
   };
 
   const handleIncrement = () => {
     setQuantity(quantity + 1);
     incrementItemCount(cartItem.productId);
+    updateCartSummary();
   };
 
   return (
