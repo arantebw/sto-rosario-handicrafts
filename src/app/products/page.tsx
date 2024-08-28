@@ -18,7 +18,7 @@ async function ProductsPage({ searchParams }: ProductsPageProps) {
     <main className="max-w-[1440px] mx-auto flex flex-col h-screen relative">
       <NavHeader />
       <ItemsCarousel />
-      <TodaysDeals products={productsList} />
+      <TodaysDeals products={productsList} category={category} />
       <NavFooter />
     </main>
   );
