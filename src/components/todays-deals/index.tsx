@@ -7,16 +7,16 @@ interface TodaysDealsProps {
 
 async function TodaysDeals({ products }: TodaysDealsProps) {
   return (
-    <main className="p-4">
+    <main className="py-4">
       <h2 className="mb-4 text-2xl">Today&apos;s Deals</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {products.map((bayong: Product) => (
           <ProductCard
-            key={bayong.productId}
-            productId={bayong.productId}
+            key={bayong?.productId}
+            productId={bayong?.productId}
             cloudinaryPublicId={bayong?.cloudinaryPublicId}
-            name={bayong.productName}
-            price={bayong.price}
+            name={bayong?.productName}
+            price={bayong?.price}
           />
         ))}
       </div>

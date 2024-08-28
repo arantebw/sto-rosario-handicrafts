@@ -32,15 +32,15 @@ function ProductDetails({ currentProduct }: ProductDetailsProps) {
   return (
     <div className="flex flex-col md:flex-row justify-center gap-4 p-4 rounded lg:border w-full lg:w-8/12">
       <CldImage
-        src={currentProduct.cloudinaryPublicId ?? ""} // TODO: Add an image placeholder.
+        src={currentProduct?.cloudinaryPublicId ?? ""} // TODO: Add an image placeholder.
         alt="A product's brief description."
         width="500"
         height="500"
         className="rounded w-full lg:w-1/2"
       />
       <div className="flex flex-col gap-4 w-full lg:w-1/2">
-        <h2 className="text-xl">{currentProduct.productName}</h2>
-        <p>{`${formatToCurrency(Number(currentProduct.price.decimal + "." + currentProduct.price.fraction))}`}</p>
+        <h2 className="text-xl">{currentProduct?.productName}</h2>
+        <p>{`${formatToCurrency(Number(currentProduct?.price.decimal + "." + currentProduct?.price.fraction))}`}</p>
         <div className="flex flex-row gap-4 items-center">
           <p>{`Quantity:`}</p>
           <Input

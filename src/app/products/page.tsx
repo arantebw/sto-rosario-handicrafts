@@ -4,8 +4,15 @@ import NavFooter from "@/components/nav-footer";
 import NavHeader from "@/components/nav-header";
 import TodaysDeals from "@/components/todays-deals";
 
-async function ProductsPage() {
-  const productsList = await retrieveAllProducts();
+interface ProductsPageProps {
+  searchParams: {
+    category?: string;
+  };
+}
+
+async function ProductsPage({ searchParams }: ProductsPageProps) {
+  const { category } = searchParams;
+  const productsList = await retrieveAllProducts(category);
 
   return (
     <main className="max-w-[1440px] mx-auto flex flex-col h-screen relative">

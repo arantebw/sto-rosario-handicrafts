@@ -34,13 +34,13 @@ async function NavHeader() {
           <Link href="/products">Today&apos;s Deals</Link>
         </li>
         <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
-          <Link href="#">Banig</Link>
+          <Link href={`/products?category=Banig`}>Banig</Link>
         </li>
         <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
-          <Link href="#">Bayong</Link>
+          <Link href={`/products?category=Bayong`}>Bayong</Link>
         </li>
         <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
-          <Link href="#">Wallets</Link>
+          <Link href={`/products?category=Wallet`}>Wallets</Link>
         </li>
       </ul>
       <Separator />
