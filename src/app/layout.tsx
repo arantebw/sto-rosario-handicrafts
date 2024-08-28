@@ -1,5 +1,8 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
+
+import { UserProvider } from "@auth0/nextjs-auth0/client";
+
 import { cn } from "@/lib/utils";
 import "./globals.css";
 
@@ -20,14 +23,16 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body
-        className={cn(
-          "min-h-screen bg-background antialised",
-          ubuntu.className,
-        )}
-      >
-        {children}
-      </body>
+      <UserProvider>
+        <body
+          className={cn(
+            "min-h-screen bg-background antialised",
+            ubuntu.className,
+          )}
+        >
+          {children}
+        </body>
+      </UserProvider>
     </html>
   );
 }

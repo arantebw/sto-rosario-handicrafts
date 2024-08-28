@@ -1,7 +1,8 @@
 import NavFooter from "@/components/nav-footer";
 import NavHeader from "@/components/nav-header";
+import { PersonalDetails } from "@/components";
 
-async function AccountPage() {
+export default async function AccountPage() {
   return (
     <main className="max-w-[1440px] mx-auto flex flex-col h-screen relative">
       <NavHeader />
@@ -15,16 +16,15 @@ async function AccountPage() {
               <li>Personal Details</li>
               <li>Address Book</li>
               <li>My Orders</li>
+              <li>
+                <a href="/api/auth/logout">Log Out</a>
+              </li>
             </ul>
           </div>
-          <div className="flex-grow p-4 rounded-md border">
-            <h3 className="text-xl">Personal Details</h3>
-          </div>
+          <PersonalDetails />
         </div>
       </main>
       <NavFooter />
     </main>
   );
 }
-
-export default AccountPage;
