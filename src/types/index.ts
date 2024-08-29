@@ -1,6 +1,41 @@
+export enum Category {
+  BANIG = "Banig",
+  BAYONG = "Bayong",
+  WALLET = "Wallet",
+}
+
+export enum Gender {
+  MALE = "Male",
+  FEMALE = "Female",
+  OTHER = "Other",
+}
+
 export type Account = {
   email: string;
   accessToken?: string;
+};
+
+export type Address = {
+  addressLine1: string;
+  addressLine2?: string;
+  barangay: string;
+  cityOrMunicipality: string;
+  province: string;
+  zipCode: string;
+  isDefault: false;
+  contactPerson: string;
+  contactNumber: string;
+};
+
+export type FullName = {
+  firstName: string;
+  middleName?: string;
+  lastName: string;
+};
+
+export type Price = {
+  decimal: number;
+  fraction: number;
 };
 
 export type Product = {
@@ -11,4 +46,13 @@ export type Product = {
     decimal: number;
     fraction: number;
   };
+};
+
+export type User = {
+  name: FullName;
+  email: string;
+  gender?: Gender;
+  birthday?: Date;
+  shippingAddress?: Address[];
+  billingAddress?: Address[];
 };
