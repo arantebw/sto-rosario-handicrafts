@@ -1,4 +1,5 @@
 import ButtonLink from "@/components/button-link";
+import { Button } from "@/components/ui/button";
 import { Separator } from "@/components/ui/separator";
 import WelcomeSection from "@/components/welcome-section";
 import Link from "next/link";
@@ -17,7 +18,9 @@ function HomePage() {
             ! Or,
           </p>
           <Separator />
-          <a href="/api/auth/login">Log In or Create a New Account</a>
+          <Button variant="default">
+            <a href="/api/auth/login">Log In or Create a New Account</a>
+          </Button>
         </div>
       </div>
     </main>
