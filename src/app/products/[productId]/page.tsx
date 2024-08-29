@@ -1,8 +1,7 @@
+import { retrieveOneProduct } from "@/actions";
 import NavFooter from "@/components/nav-footer";
 import NavHeader from "@/components/nav-header";
 import ProductDetails from "@/components/product-details";
-import bayongs from "@/mocks/bayongs.json";
-import { Product } from "@/types";
 
 interface ProductDetailsPageProps {
   params: {
@@ -10,13 +9,9 @@ interface ProductDetailsPageProps {
   };
 }
 
-function ProductDetailsPage({ params }: ProductDetailsPageProps) {
+async function ProductDetailsPage({ params }: ProductDetailsPageProps) {
   const { productId } = params;
-
-  // TODO: Update this later on when db is integrated.
-  const currentProduct = bayongs.filter(
-    (bayong: Product) => bayong.productId == productId,
-  )[0];
+  const currentProduct = await retrieveOneProduct(productId);
 
   return (
     <main className="max-w-[1440px] mx-auto flex flex-col h-screen relative">
