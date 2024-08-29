@@ -8,7 +8,7 @@ interface TodaysDealsProps {
 
 async function TodaysDeals({ products, category }: TodaysDealsProps) {
   return (
-    <main className="py-4">
+    <main className="max-[1440px]:p-4 py-4">
       <h2 className="mb-4 text-2xl">{category ?? `Today's Deals`}</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4">
         {products.map((bayong: Product) => (
