@@ -1,3 +1,4 @@
+import AddressForm from "../address-form";
 import {
   Accordion,
   AccordionContent,
@@ -19,7 +20,7 @@ export default function CheckoutProcess({}: CheckoutProcessProps) {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+            <AddressForm />
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
