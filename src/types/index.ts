@@ -1,3 +1,9 @@
+export enum ButtonType {
+  MOBILE,
+  TABLET,
+  DESKTOP,
+}
+
 export enum Category {
   BANIG = "Banig",
   BAYONG = "Bayong",
@@ -8,6 +14,11 @@ export enum Gender {
   MALE = "Male",
   FEMALE = "Female",
   OTHER = "Other",
+}
+
+export enum PageType {
+  SHOPPING_CART,
+  CHECKOUT,
 }
 
 export type Account = {
