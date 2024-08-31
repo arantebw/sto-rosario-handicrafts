@@ -1,3 +1,5 @@
+"use client";
+
 import AddressForm from "../address-form";
 import {
   Accordion,
@@ -6,9 +8,16 @@ import {
   AccordionTrigger,
 } from "../ui/accordion";
 
-interface CheckoutProcessProps {}
+interface CheckoutProcessProps {
+  provincesList: {
+    code: string;
+    name: string;
+  }[];
+}
 
-export default function CheckoutProcess({}: CheckoutProcessProps) {
+export default function CheckoutProcess({
+  provincesList,
+}: CheckoutProcessProps) {
   return (
     <div className="w-full lg:w-2/3 md:px-4 md:pt-4 rounded-md md:border">
       <Accordion type="single" collapsible>
@@ -20,7 +29,7 @@ export default function CheckoutProcess({}: CheckoutProcessProps) {
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            <AddressForm />
+            <AddressForm provincesList={provincesList} />
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">

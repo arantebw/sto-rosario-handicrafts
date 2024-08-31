@@ -4,9 +4,12 @@ import { CartSummary, CheckoutProcess } from "@/components";
 import NavFooter from "@/components/nav-footer";
 import NavHeader from "@/components/nav-header";
 import { PageType } from "@/types";
+import { getProvincesList } from "./actions";
 
 export default withPageAuthRequired(
   async function CartPage() {
+    const provincesList = await getProvincesList();
+
     return (
       <main className="max-w-[1440px] mx-auto flex flex-col h-screen relative">
         <NavHeader />
@@ -15,7 +18,7 @@ export default withPageAuthRequired(
             <h2 className="text-2xl">{`Checkout`}</h2>
           </div>
           <div className="flex flex-col lg:flex-row gap-4">
-            <CheckoutProcess />
+            <CheckoutProcess provincesList={provincesList} />
             <CartSummary pageType={PageType.CHECKOUT} />
           </div>
         </main>

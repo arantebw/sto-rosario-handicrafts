@@ -12,10 +12,16 @@ import {
 import { Button } from "../ui/button";
 import { Input } from "../ui/input";
 import { Checkbox } from "../ui/checkbox";
+import ComboBox from "../province-combobox";
 
-interface AddressFormProps {}
+interface AddressFormProps {
+  provincesList: {
+    code: string;
+    name: string;
+  }[];
+}
 
-export default function AddressForm({}: AddressFormProps) {
+export default function AddressForm({ provincesList }: AddressFormProps) {
   const form = useForm();
 
   return (
@@ -97,14 +103,27 @@ export default function AddressForm({}: AddressFormProps) {
         />
         <FormField
           control={form.control}
-          name="zipcode"
+          name="province"
+          render={({ field }) => (
+            <FormItem className="flex flex-col">
+              <FormLabel>{`Province`}</FormLabel>
+              <FormControl>
+                <ComboBox itemsList={provincesList} />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="shipping-address"
           render={({ field }) => (
             <FormItem className="flex flex-row items-center">
               <FormControl className="mr-4">
                 <Checkbox />
               </FormControl>
               <div className="!mt-0">
-                <FormLabel className="mt-0 leading-normal">{`Set as default`}</FormLabel>
+                <FormLabel className="mt-0 leading-normal">{`Set as default shipping address`}</FormLabel>
                 <FormMessage />
               </div>
             </FormItem>
