@@ -90,12 +90,12 @@ export default function AddressForm({ provincesList }: AddressFormProps) {
         />
         <FormField
           control={form.control}
-          name="zipcode"
+          name="province"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>{`Zip (Postal) Code`}</FormLabel>
+            <FormItem className="flex flex-col gap-1.5">
+              <FormLabel>{`Province`}</FormLabel>
               <FormControl>
-                <Input placeholder="12345" {...field} />
+                <ComboBox itemsList={provincesList} name="a province" />
               </FormControl>
               <FormMessage />
             </FormItem>
@@ -103,12 +103,41 @@ export default function AddressForm({ provincesList }: AddressFormProps) {
         />
         <FormField
           control={form.control}
-          name="province"
+          name="city-or-municipality"
           render={({ field }) => (
             <FormItem className="flex flex-col gap-1.5">
-              <FormLabel>{`Province`}</FormLabel>
+              <FormLabel>{`City or Municipality`}</FormLabel>
               <FormControl>
-                <ComboBox itemsList={provincesList} />
+                <ComboBox
+                  itemsList={provincesList}
+                  name="a city/municipality"
+                />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="barangay"
+          render={({ field }) => (
+            <FormItem className="flex flex-col gap-1.5">
+              <FormLabel>{`Barangay`}</FormLabel>
+              <FormControl>
+                <ComboBox itemsList={provincesList} name="a barangay" />
+              </FormControl>
+              <FormMessage />
+            </FormItem>
+          )}
+        />
+        <FormField
+          control={form.control}
+          name="zipcode"
+          render={({ field }) => (
+            <FormItem>
+              <FormLabel>{`Zip (Postal) Code`}</FormLabel>
+              <FormControl>
+                <Input placeholder="12345" {...field} />
               </FormControl>
               <FormMessage />
             </FormItem>

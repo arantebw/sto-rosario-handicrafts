@@ -26,9 +26,13 @@ type Item = {
 
 interface ComboBoxProps {
   itemsList: { code: string; name: string }[];
+  name?: string;
 }
 
-export default function ComboBox({ itemsList }: ComboBoxProps) {
+export default function ComboBox({
+  itemsList,
+  name = "an item",
+}: ComboBoxProps) {
   const updatedItemsList = itemsList
     .map((i) => ({
       value: i.name,
@@ -49,13 +53,13 @@ export default function ComboBox({ itemsList }: ComboBoxProps) {
         >
           {value
             ? updatedItemsList.find((item) => item.value === value)?.label
-            : "Select a province..."}
+            : `Select ${name}...`}
           <ChevronsUpDown className="ml-2 h-4 w-4 shrink-0 opacity-50" />
         </Button>
       </PopoverTrigger>
       <PopoverContent className="w-full p-0">
         <Command>
-          <CommandInput placeholder="Search a province..." />
+          <CommandInput placeholder={`Search ${name}...`} />
           <CommandList>
             <CommandEmpty>No province found.</CommandEmpty>
             <CommandGroup>
