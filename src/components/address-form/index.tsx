@@ -105,7 +105,7 @@ export default function AddressForm({ provincesList }: AddressFormProps) {
           control={form.control}
           name="province"
           render={({ field }) => (
-            <FormItem className="flex flex-col">
+            <FormItem className="flex flex-col gap-1.5">
               <FormLabel>{`Province`}</FormLabel>
               <FormControl>
                 <ComboBox itemsList={provincesList} />
