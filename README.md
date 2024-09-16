@@ -1,10 +1,10 @@
 # ecommerce-platform
 
-The eCommerce Platform template project of the Alpha Software House.
+The eCommerce Platform template project for the 2422 Software House.
 
 ## Requirements
 
-- Node.js >= 18
+- Node >= 18
 
 ## Getting Started
 
@@ -12,8 +12,8 @@ Install `node` version `18.x.x` or higher using `nvm` (Node Version Manager) --
 this is a separate tool, then activate it.
 
 ```bash
-nvm install 18
-nvm use 18
+nvm install 18 # if not yet installed
+nvm use 18     # activate
 ```
 
 Create a copy of the `.env.example` to `.env.local`.
