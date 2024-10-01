@@ -4,7 +4,7 @@ The eCommerce Platform template project for the 2422 Software House.
 
 ## Requirements
 
-- Node >= 18
+- Node ^18.0.0
 
 ## Getting Started
 
