@@ -29,18 +29,30 @@ async function NavHeader() {
         </nav>
       </header>
       <Separator />
-      <ul className="flex flex-row flex-wrap md:flex-nowrap md:justify-center">
+      <ul className="flex flex-row flex-wrap md:justify-center">
         <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
           <Link href="/products">Today&apos;s Deals</Link>
         </li>
         <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
-          <Link href={`/products?category=Banig`}>Banig</Link>
+          <Link href={`/products?category=Bag`}>Bag</Link>
         </li>
         <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
           <Link href={`/products?category=Bayong`}>Bayong</Link>
         </li>
         <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
-          <Link href={`/products?category=Wallet`}>Wallets</Link>
+          <Link href={`/products?category=Carpet`}>Carpet</Link>
+        </li>
+        <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
+          <Link href={`/products?category=Case`}>Case</Link>
+        </li>
+        <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
+          <Link href={`/products?category=Coaster`}>Coaster</Link>
+        </li>
+        <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
+          <Link href={`/products?category=Hat`}>Hat</Link>
+        </li>
+        <li className="min-w-[150px] p-4 w-1/2 md:w-fit text-center">
+          <Link href={`/products?category=Placemat`}>Placemat</Link>
         </li>
       </ul>
       <Separator />
