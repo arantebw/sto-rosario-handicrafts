@@ -1,4 +1,5 @@
 import { createUser, retrieveOneUserByEmail } from "@/actions";
+import { PersonalDetails } from "@/components";
 import AccountSidebar from "@/components/account-sidebar";
 import NavFooter from "@/components/nav-footer";
 import NavHeader from "@/components/nav-header";
@@ -27,7 +28,9 @@ export default withPageAuthRequired(async function Inventory() {
           <h2 className="text-2xl">{`Hello, ${user.name.firstName}!`}</h2>
         </div>
         <div className="flex flex-col md:flex-row gap-4">
-          <AccountSidebar />
+          <AccountSidebar>
+            <PersonalDetails />
+          </AccountSidebar>
         </div>
       </main>
       <NavFooter />

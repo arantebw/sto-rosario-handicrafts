@@ -1,7 +1,11 @@
 import Link from "next/link";
 import PersonalDetails from "../personal-details";
 
-function AccountSidebar() {
+interface AccountSidebarProps {
+  children: React.ReactNode;
+}
+
+function AccountSidebar({ children }: AccountSidebarProps) {
   return (
     <>
       <div className="w-full md:w-1/5 gap-4">
@@ -17,7 +21,7 @@ function AccountSidebar() {
           </li>
         </ul>
       </div>
-      <PersonalDetails />
+      {children}
     </>
   );
 }
