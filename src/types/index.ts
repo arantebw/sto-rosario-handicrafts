@@ -57,6 +57,8 @@ export type Product = {
     decimal: number;
     fraction: number;
   };
+  stocks: number;
+  sku: string;
 };
 
 export type User = {

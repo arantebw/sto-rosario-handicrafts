@@ -1,6 +1,10 @@
+import { retrieveAllProducts } from "@/actions";
+import { Product } from "@/types";
 import { Table } from "@radix-ui/themes";
 
-export default function InventoryDetails() {
+export default async function InventoryDetails() {
+  const productsList = await retrieveAllProducts();
+
   return (
     <div className="flex-grow p-4 rounded-md border">
       <h3 className="text-xl">Inventory</h3>
@@ -8,30 +12,20 @@ export default function InventoryDetails() {
       <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
-            <Table.ColumnHeaderCell>Full name</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Email</Table.ColumnHeaderCell>
-            <Table.ColumnHeaderCell>Group</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Product Name</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>Stocks</Table.ColumnHeaderCell>
+            <Table.ColumnHeaderCell>SKU</Table.ColumnHeaderCell>
           </Table.Row>
         </Table.Header>
 
         <Table.Body>
-          <Table.Row>
-            <Table.RowHeaderCell>Danilo Sousa</Table.RowHeaderCell>
-            <Table.Cell>danilo@example.com</Table.Cell>
-            <Table.Cell>Developer</Table.Cell>
-          </Table.Row>
-
-          <Table.Row>
-            <Table.RowHeaderCell>Zahra Ambessa</Table.RowHeaderCell>
-            <Table.Cell>zahra@example.com</Table.Cell>
-            <Table.Cell>Admin</Table.Cell>
-          </Table.Row>
-
-          <Table.Row>
-            <Table.RowHeaderCell>Jasper Eriksson</Table.RowHeaderCell>
-            <Table.Cell>jasper@example.com</Table.Cell>
-            <Table.Cell>Developer</Table.Cell>
-          </Table.Row>
+          {productsList.map((p: Product) => (
+            <Table.Row key={p.productId}>
+              <Table.RowHeaderCell>{p.productName}</Table.RowHeaderCell>
+              <Table.Cell>{p.stocks}</Table.Cell>
+              <Table.Cell>{p.sku}</Table.Cell>
+            </Table.Row>
+          ))}
         </Table.Body>
       </Table.Root>
     </div>
