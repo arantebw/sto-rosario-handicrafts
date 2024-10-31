@@ -1,9 +1,11 @@
 import type { Metadata } from "next";
 import { Ubuntu } from "next/font/google";
-
 import { UserProvider } from "@auth0/nextjs-auth0/client";
+import { Theme } from "@radix-ui/themes";
 
 import { cn } from "@/lib/utils";
+
+import "@radix-ui/themes/styles.css";
 import "./globals.css";
 
 const ubuntu = Ubuntu({
@@ -30,7 +32,7 @@ export default function RootLayout({
             ubuntu.className,
           )}
         >
-          {children}
+          <Theme>{children}</Theme>
         </body>
       </UserProvider>
     </html>
