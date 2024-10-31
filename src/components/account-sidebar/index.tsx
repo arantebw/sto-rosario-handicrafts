@@ -9,7 +9,9 @@ function AccountSidebar({ children }: AccountSidebarProps) {
     <>
       <div className="w-full md:w-1/5 gap-4">
         <ul className="flex flex-col gap-4">
-          <li>Personal Details</li>
+          <li>
+            <Link href="/account">Personal Details</Link>
+          </li>
           <li>Address Book</li>
           <li>Orders History</li>
           <li>
