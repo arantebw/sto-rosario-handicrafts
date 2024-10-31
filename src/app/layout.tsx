@@ -5,13 +5,14 @@ import { Theme } from "@radix-ui/themes";
 
 import { cn } from "@/lib/utils";
 
-import "@radix-ui/themes/styles.css";
-import "./globals.css";
-
 const ubuntu = Ubuntu({
   subsets: ["latin"],
   weight: ["400", "700"],
+  variable: "--font-ubuntu",
 });
+
+import "@radix-ui/themes/styles.css";
+import "./globals.css";
 
 export const metadata: Metadata = {
   title: process.env.APP_NAME,
@@ -26,15 +27,13 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UserProvider>
-        <body>
-          <Theme
-            className={cn(
-              "min-h-screen bg-background antialised",
-              ubuntu.className,
-            )}
-          >
-            {children}
-          </Theme>
+        <body
+          className={cn(
+            "min-h-screen bg-background antialised",
+            ubuntu.className,
+          )}
+        >
+          <Theme>{children}</Theme>
         </body>
       </UserProvider>
     </html>

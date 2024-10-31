@@ -1,5 +1,3 @@
-"use client";
-
 import { Table } from "@radix-ui/themes";
 
 export default function InventoryDetails() {
