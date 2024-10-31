@@ -26,13 +26,15 @@ export default function RootLayout({
   return (
     <html lang="en">
       <UserProvider>
-        <body
-          className={cn(
-            "min-h-screen bg-background antialised",
-            ubuntu.className,
-          )}
-        >
-          <Theme>{children}</Theme>
+        <body>
+          <Theme
+            className={cn(
+              "min-h-screen bg-background antialised",
+              ubuntu.className,
+            )}
+          >
+            {children}
+          </Theme>
         </body>
       </UserProvider>
     </html>
