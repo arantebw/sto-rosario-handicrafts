@@ -1,6 +1,6 @@
 import { createUser, retrieveOneUserByEmail } from "@/actions";
-import { PersonalDetails } from "@/components";
 import AccountSidebar from "@/components/account-sidebar";
+import InventoryDetails from "@/components/inventory-details";
 import NavFooter from "@/components/nav-footer";
 import NavHeader from "@/components/nav-header";
 import { User } from "@/types";
@@ -30,7 +30,7 @@ export default withPageAuthRequired(
           </div>
           <div className="flex flex-col md:flex-row gap-4">
             <AccountSidebar>
-              <PersonalDetails />
+              <InventoryDetails />
             </AccountSidebar>
           </div>
         </main>
