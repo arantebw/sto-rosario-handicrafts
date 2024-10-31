@@ -1,5 +1,4 @@
 import Link from "next/link";
-import PersonalDetails from "../personal-details";
 
 interface AccountSidebarProps {
   children: React.ReactNode;
@@ -14,7 +13,7 @@ function AccountSidebar({ children }: AccountSidebarProps) {
           <li>Address Book</li>
           <li>Orders History</li>
           <li>
-            <Link href="/inventory">Inventory</Link>
+            <Link href="/account/inventory">Inventory</Link>
           </li>
           <li>
             <a href="/api/auth/logout">Log Out</a>
