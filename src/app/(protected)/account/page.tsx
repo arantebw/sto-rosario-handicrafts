@@ -1,10 +1,10 @@
 import { withPageAuthRequired, getSession } from "@auth0/nextjs-auth0";
 
 import { createUser, retrieveOneUserByEmail } from "@/actions";
-import { PersonalDetails } from "@/components";
 import NavFooter from "@/components/nav-footer";
 import NavHeader from "@/components/nav-header";
 import { User } from "@/types";
+import AccountSidebar from "@/components/account-sidebar";
 
 export default withPageAuthRequired(
   async function AccountPage() {
@@ -29,17 +29,7 @@ export default withPageAuthRequired(
             <h2 className="text-2xl">{`Hello, ${user.name.firstName}!`}</h2>
           </div>
           <div className="flex flex-col md:flex-row gap-4">
-            <div className="w-full md:w-1/5 gap-4">
-              <ul className="flex flex-col gap-4">
-                <li>Personal Details</li>
-                <li>Address Book</li>
-                <li>Orders History</li>
-                <li>
-                  <a href="/api/auth/logout">Log Out</a>
-                </li>
-              </ul>
-            </div>
-            <PersonalDetails />
+            <AccountSidebar />
           </div>
         </main>
         <NavFooter />
