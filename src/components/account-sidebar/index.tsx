@@ -18,6 +18,9 @@ function AccountSidebar({ children }: AccountSidebarProps) {
             <Link href="/account/inventory">Inventory</Link>
           </li>
           <li>
+            <Link href="/account/sales">Sales</Link>
+          </li>
+          <li>
             <a href="/api/auth/logout">Log Out</a>
           </li>
         </ul>
