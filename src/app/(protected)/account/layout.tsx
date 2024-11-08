@@ -5,6 +5,7 @@ import NavFooter from "@/components/nav-footer";
 import NavHeader from "@/components/nav-header";
 import { User } from "@/types";
 import { getSession } from "@auth0/nextjs-auth0";
+import { redirect } from "next/navigation";
 
 type AccountLayoutProps = {
   children: ReactNode;
@@ -12,6 +13,9 @@ type AccountLayoutProps = {
 
 async function AccountLayout({ children }: AccountLayoutProps) {
   const session = await getSession();
+  if (!session) {
+    redirect("/api/auth/login");
+  }
 
   let user: User = await retrieveOneUserByEmail(session?.user.email);
   if (!user) {
