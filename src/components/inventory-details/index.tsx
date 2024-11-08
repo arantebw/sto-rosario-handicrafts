@@ -24,7 +24,7 @@ export default async function InventoryDetails() {
             <Table.Row key={p.productId}>
               <Table.RowHeaderCell>
                 <Link
-                  href={`/account/inventory/product/${p.productId}`}
+                  href={`/account/inventory/${p.productId}`}
                   className="hover:underline"
                 >
                   {p.productName}
