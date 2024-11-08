@@ -1,6 +1,7 @@
 import { retrieveAllProducts } from "@/actions";
 import { Product } from "@/types";
 import { Table } from "@radix-ui/themes";
+import Link from "next/link";
 
 export default async function InventoryDetails() {
   const productsList = await retrieveAllProducts();
@@ -21,7 +22,14 @@ export default async function InventoryDetails() {
         <Table.Body>
           {productsList.map((p: Product) => (
             <Table.Row key={p.productId}>
-              <Table.RowHeaderCell>{p.productName}</Table.RowHeaderCell>
+              <Table.RowHeaderCell>
+                <Link
+                  href={`/account/inventory/product/${p.productId}`}
+                  className="hover:underline"
+                >
+                  {p.productName}
+                </Link>
+              </Table.RowHeaderCell>
               <Table.Cell>{p.stocks}</Table.Cell>
               <Table.Cell>{p.sku}</Table.Cell>
             </Table.Row>
