@@ -6,7 +6,7 @@ import { User } from "@/types";
 // Products
 //
 
-export async function retrieveAllProducts(category?: string) {
+async function retrieveAllProducts(category?: string) {
   const uri = category
     ? `${process.env.SRV_HOST}/api/products/category?name=${category}`
     : `${process.env.SRV_HOST}/api/products`;
@@ -17,7 +17,7 @@ export async function retrieveAllProducts(category?: string) {
   return res.json();
 }
 
-export async function retrieveOneProduct(productId: string) {
+async function retrieveOneProduct(productId: string) {
   const uri = `${process.env.SRV_HOST}/api/products/${productId}`;
   const res = await fetch(uri, { method: "GET", cache: "no-store" });
   if (!res.ok) {
@@ -30,7 +30,7 @@ export async function retrieveOneProduct(productId: string) {
 // Users
 //
 
-export async function createUser(newUser: User) {
+async function createUser(newUser: User) {
   const uri = `${process.env.SRV_HOST}/api/users`;
   try {
     const res = await fetch(uri, {
@@ -46,7 +46,7 @@ export async function createUser(newUser: User) {
   }
 }
 
-export async function retrieveOneUserByEmail(email: string) {
+async function retrieveOneUserByEmail(email: string) {
   const uri = `${process.env.SRV_HOST}/api/users/email?q=${email}`;
   const res = await fetch(uri, { method: "GET" });
   if (!res.ok) {
@@ -54,3 +54,10 @@ export async function retrieveOneUserByEmail(email: string) {
   }
   return res.json();
 }
+
+export {
+  retrieveAllProducts,
+  retrieveOneProduct,
+  createUser,
+  retrieveOneUserByEmail,
+};
