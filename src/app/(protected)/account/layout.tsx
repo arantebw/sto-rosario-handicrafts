@@ -33,7 +33,11 @@ async function AccountLayout({ children }: AccountLayoutProps) {
       <NavHeader />
       <main className="p-4 grid grid-cols-1 gap-4">
         <div>
-          <h2 className="text-2xl">{`Hello, ${user.name.firstName}!`}</h2>
+          <h2 className="text-2xl">
+            {user.name?.firstName
+              ? `Hello, ${user.name?.firstName}`
+              : user.email}
+          </h2>
         </div>
         <div className="flex flex-col md:flex-row gap-4">
           <AccountSidebar>{children}</AccountSidebar>
