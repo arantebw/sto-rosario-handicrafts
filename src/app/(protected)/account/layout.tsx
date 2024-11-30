@@ -16,8 +16,10 @@ async function AccountLayout({ children }: AccountLayoutProps) {
   if (!session) {
     redirect("/api/auth/login");
   }
-
   let user: User = await retrieveOneUserByEmail(session?.user.email);
+
+  // Do this for newly created account only.
+  // It will create a new document in the database.
   if (!user) {
     user = await createUser({
       email: session?.user.email,
@@ -40,7 +42,9 @@ async function AccountLayout({ children }: AccountLayoutProps) {
           </h2>
         </div>
         <div className="flex flex-col md:flex-row gap-4">
-          <AccountSidebar>{children}</AccountSidebar>
+          <AccountSidebar isUserAdmin={user?.role === "admin"}>
+            {children}
+          </AccountSidebar>
         </div>
       </main>
       <NavFooter />
