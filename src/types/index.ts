@@ -68,4 +68,5 @@ export type User = {
   birthday?: Date;
   shippingAddress?: Address[];
   billingAddress?: Address[];
+  role?: "admin" | "regular";
 };
