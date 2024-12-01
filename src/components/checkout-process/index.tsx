@@ -29,7 +29,7 @@ export default function CheckoutProcess({
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            <AddressForm provincesList={provincesList} />
+            {/* TODO: List the user's shipping addresses. */}
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-2">
@@ -40,7 +40,7 @@ export default function CheckoutProcess({
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+            {/* TODO: List the user's shipping addresses. */}
           </AccordionContent>
         </AccordionItem>
         <AccordionItem value="item-3">
@@ -51,7 +51,7 @@ export default function CheckoutProcess({
             </div>
           </AccordionTrigger>
           <AccordionContent>
-            Yes. It adheres to the WAI-ARIA design pattern.
+            {/* TODO: List the available payment options. */}
           </AccordionContent>
         </AccordionItem>
       </Accordion>
