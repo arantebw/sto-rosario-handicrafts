@@ -16,7 +16,9 @@ function AccountSidebar({
           <li>
             <Link href="/account">Personal Details</Link>
           </li>
-          <li>Address Book</li>
+          <li>
+            <Link href="/account/address-book">Address Book</Link>
+          </li>
           <li>Orders History</li>
           {isUserAdmin && (
             <>
